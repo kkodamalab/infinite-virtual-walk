@@ -1,0 +1,4 @@
+let detector;
+self.onmessage=async({data})=>{try{if(data.type==='init'){const{FilesetResolver,ObjectDetector}=await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/vision_bundle.mjs');const files=await FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/wasm');detector=await ObjectDetector.createFromOptions(files,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float32/1/efficientdet_lite0.tflite',delegate:'CPU'},runningMode:'IMAGE',scoreThreshold:.45,maxResults:20});self.postMessage({id:data.id,ready:true});}else{const result=detector.detect(data.bitmap);data.bitmap.close();self.postMessage({id:data.id,detections:result.detections});}}catch(e){data.bitmap?.close();self.postMessage({id:data.id,error:e.message});}};
+
+

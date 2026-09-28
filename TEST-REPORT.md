@@ -27,6 +27,8 @@
 
 アプリ画面で、デモ起動、再生時刻の進行、一時停止、NEXT WORLD、ALL ON/OFF、SAVE WORLD、保存済みプロジェクトの復元を確認。狭幅表示で横スクロールなし。ネット検索はCommonsへの実HTTP要求と40枚のライセンス付き同梱画像取得を確認。
 
+追加仕様のブラウザー確認として、CAPTURE画面にCAMERA / LOCAL VIDEO / ONLINE VIDEOタブが表示されること、Commons APIの実検索で動画以外を除外し、WebMカードにタイトル・サイズ・mime・ライセンス・作者・出典を表示することを確認。Shibuya Crossing, Tokyo, Japan (video).webm（CC BY-SA 4.0 / Basile Morin）を選択し、アプリ内プレビュー、シークバー、解析区間、ANALYZE & RECONSTRUCTボタンが有効になることを確認しました。実動画の解析完了とGitHub Pages上での確認は、push前のため未検証です。
+
 ## 未検証・制約
 
 実カメラの起動・停止、実機録画、広角レンズ、カメラ権限拒否後の実ファイル読込、GPS、姿勢、実際の歩行動画全体の追跡、iPhone Safari、長時間の周回切替、1920×1080/30fps、プロジェクター出力は未検証です。ブラウザーのUI確認を実機検証の代わりに扱いません。検出精度・検索品質・1080pの性能は合格と断定していません。
